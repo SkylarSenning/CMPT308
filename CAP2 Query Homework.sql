@@ -1,4 +1,4 @@
-﻿--List all data	for all customers.
+﻿--List all data	for every customers.
 SELECT name 
 FROM   agents
 WHERE  city = 'New York' OR city = 'Newark'
