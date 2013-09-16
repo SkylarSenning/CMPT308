@@ -1,9 +1,4 @@
-﻿--List all data	for every customers.
-SELECT name 
-FROM   agents
-WHERE  city = 'New York' OR city = 'Newark'
-
---List all data	for all	customers.
+﻿--List all data	for all	customers.
 SELECT *
 FROM customers 
 
@@ -26,9 +21,10 @@ SELECT name, city
 FROM customers 
 WHERE city <>'Dallas'
 
---List all data	for all	customers.
-SELECT *
-FROM customers
+--List the names of agents in New York	or Newark.
+SELECT name 
+FROM   agents
+WHERE  city = 'New York' OR city = 'Newark'
 
 --List all data for products not in New York or Newark that cost US$1 or less.
 SELECT *
