@@ -25,14 +25,16 @@ WHERE cid NOT IN (SELECT cid
 --Get the cids and names of customers who ordered both product p01 and p07.
 SELECT cid, name
 FROM customers 
-WHERE cid IN (SELECT cid 
+WHERE cid IN ((SELECT cid 
 		FROM orders
-		WHERE pid = 'p01' OR pid = 'p07'
-		)
+		WHERE pid = 'p01'
+		) INTERSECT (SELECT cid
+				FROM orders
+				WHERE pid = 'p07'))
 --Get the pids of products ordered by any customers who ever placed an order through agent a03.
-SELECT pid
-FROM products
-WHERE pid IN (SELECT pid
+SELECT distinct pid
+FROM orders
+WHERE cid IN (SELECT cid
 		FROM orders
 		WHERE aid = 'a03'
 		)
