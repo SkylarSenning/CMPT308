@@ -34,6 +34,7 @@ WHERE o1.aid = o2.aid
 	AND c.city = 'Kyoto'
 ORDER by pid asc
 --
+---Class Example
 select distinct pid
 from orders
 where aid in (select aid
